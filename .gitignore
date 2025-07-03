@@ -1,2 +1,3 @@
-/target/
-/ntarget//n.cucumber//ntest-output/
+target/
+test-output/
+*.class
