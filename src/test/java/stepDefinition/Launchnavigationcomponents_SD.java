@@ -18,8 +18,9 @@ public class Launchnavigationcomponents_SD {
 	LaunchUIComponents_PF uiComponentsPage = new LaunchUIComponents_PF();
 	Launchnavigationcomponents_pf navigation=new Launchnavigationcomponents_pf();
 	
-	@Given("User is on SweetBalance homepage")
-	public void user_is_on_sweet_balance_homepage() {
+
+@Given("The Users is on SweetBalance homepage")
+public void the_users_is_on_sweet_balance_homepage() {
 	  
 		LoggerLoad.info("User is on" + uiComponentsPage.getSweetBalanceText() + "page");
 	}
@@ -65,8 +66,8 @@ public class Launchnavigationcomponents_SD {
 	  
 	}
 
-	@When("User clicks on {string} button")
-	public void user_clicks_on_button(String string) {
+	@When("User clicks on {string} button on launch page")
+	public void user_clicks_on_button_on_launch_page(String string) {
 		
 		 navigation.scrollToBottom();
 		 navigation.clickcheckyourrisk();
@@ -82,4 +83,10 @@ public class Launchnavigationcomponents_SD {
 	}
 
 
-}
+
+	
+
+	
+		}
+	
+			
