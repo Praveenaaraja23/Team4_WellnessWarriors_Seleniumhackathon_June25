@@ -75,9 +75,9 @@ public class Loginpage_SD {
 		try {
 	        List<String> validEmails = ExcelReader.getEmailsByType("Login", "valid");
 	        if (!validEmails.isEmpty()) {
-	            String email = validEmails.get(0); // Get the first valid email
-	            login.enteremail(email);           // Replace with your actual method
-	            login.clickcontinueWEmailBtn();    // Replace with your actual method
+	            String email = validEmails.get(0); 
+	            login.enteremail(email);           
+	            login.clickcontinueWEmailBtn();    
 	        } else {
 	            System.out.println("No valid emails found in Excel.");
 	        }
@@ -100,8 +100,8 @@ public class Loginpage_SD {
 		try {
 	        List<String> invalidEmails = ExcelReader.getEmailsByType("Login", "invalid");
 	        if (!invalidEmails.isEmpty()) {
-	            String email = invalidEmails.get(0); // Get the first invalid email
-	            login.enteremail(email);           // Replace with your actual method
+	            String email = invalidEmails.get(0); 
+	            login.enteremail(email);          
 	        } else {
 	            System.out.println("No invalid emails found in Excel.");
 	        }
@@ -123,9 +123,9 @@ public class Loginpage_SD {
 		try {
 	        List<String> validEmails = ExcelReader.getEmailsByType("Login", "valid");
 	        if (!validEmails.isEmpty()) {
-	            String email = validEmails.get(0); // Get the first valid email
-	            login.enteremail(email);           // Replace with your actual method
-	            login.clickcontinueWEmailBtn();    // Replace with your actual method
+	            String email = validEmails.get(0); 
+	            login.enteremail(email);           
+	            login.clickcontinueWEmailBtn();    
 	        } else {
 	            System.out.println("No valid emails found in Excel.");
 	        }
@@ -144,9 +144,9 @@ public class Loginpage_SD {
 		try {
 	        List<String> validEmails = ExcelReader.getEmailsByType("Login", "valid");
 	        if (!validEmails.isEmpty()) {
-	            String email = validEmails.get(0); // Get the first valid email
-	            login.enteremail(email);           // Replace with your actual method
-	            login.clickcontinueWEmailBtn();    // Replace with your actual method
+	            String email = validEmails.get(0); 
+	            login.enteremail(email);           
+	            login.clickcontinueWEmailBtn();    
 	        } else {
 	            System.out.println("No valid emails found in Excel.");
 	        }
@@ -174,8 +174,8 @@ public class Loginpage_SD {
 		try {
 	        List<String> passwords = ExcelReader.getPasswordsByType("Login", "valid");
 	        if (!passwords.isEmpty()) {
-	            String password = passwords.get(0); // First valid password from Excel
-	            login.EnterPwd(password);          // 'login' is your PageFactory object
+	            String password = passwords.get(0); 
+	            login.EnterPwd(password);          
 	            login.clicksigninbtn();
 	        }
 	    } catch (IOException e) {
