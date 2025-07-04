@@ -1,8 +1,5 @@
 package stepDefinition;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-
 import org.junit.Assert;
 
 import io.cucumber.java.en.Given;

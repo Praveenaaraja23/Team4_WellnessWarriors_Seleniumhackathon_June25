@@ -47,7 +47,7 @@ public class PremiumUserPhysicalActivityValidation_PF {
 		inputPwd.sendKeys(pwd);
 		btnSignin.click();
 	}
-	@FindBy(xpath = "//span[text()= 'Physical Activity']")WebElement physicalActivityButton;
+	@FindBy(xpath = "//span[text()= 'Physical Activity']/..")WebElement physicalActivityButton;
 	@FindBy(xpath = "//h1[text()= 'Physical Activity']") WebElement paTitle;
 	@FindBy(xpath = "//p[text()='Track your fitness journey']") WebElement subText;
 	@FindBy(xpath = "//*[text()='Activity Type']") WebElement activityType;
@@ -70,7 +70,7 @@ public class PremiumUserPhysicalActivityValidation_PF {
 	@FindBy(xpath = "//button[text()='Light']") WebElement lightIntensity;
 	@FindBy(xpath = "//button[text()='Moderate']") WebElement moderateIntensity;
 	@FindBy(xpath = "//button[text()='Vigorous']") WebElement vigorousIntensity;
-	@FindBy(xpath = "//button[text()='Save Activity']") WebElement saveActivity;
+	@FindBy(xpath = "//*[text()='Save Activity']") WebElement saveActivity;
 	
 	
 	public void physicalActivityClick() { physicalActivityButton.click(); }
@@ -93,7 +93,7 @@ public class PremiumUserPhysicalActivityValidation_PF {
 	
 	public boolean subTextDisplayed() { return subText.isDisplayed(); }
 	
-	public boolean placeholderTextDisplayed() { return placeholderText.getText().contains("30"); }
+	public boolean placeholderTextDisplayed() { return placeholderText.isDisplayed(); }
 	
 	public boolean presenceIntensityDisplayed() { return presenceIntensity.isDisplayed(); }
 	

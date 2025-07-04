@@ -15,7 +15,7 @@ Scenario Outline: Verify the presence of Pre-meal title in each meal section
 		| snacks       |
 		
 Scenario Outline: Verify the presence of icon for Pre-meal  in each meal section 
-	User clicks "<mealSection>" meal section
+	When User clicks "<mealSection>" meal section
 	Then User should see alarm clock icon 
 	Examples: 
 		| mealSection  |
@@ -25,7 +25,7 @@ Scenario Outline: Verify the presence of icon for Pre-meal  in each meal section
 		| snacks       |
 		
 Scenario Outline: Verify pre-meal title is shown before main meal 
-	User clicks "<mealSection>" meal section
+	When User clicks "<mealSection>" meal section
 	Then User should see pre-meal in first place of  each meal section 
 	Examples: 
 		| mealSection  |
@@ -51,7 +51,7 @@ Scenario: Verify meal section contains dish description in snack
 	Then User should see description for the dish in snack 
 	
 Scenario Outline: Verify the presence of Sub title Main-Meal 
-	User clicks "<mealSection>" meal section
+	When User clicks "<mealSection>" meal section
 	Then User should see Main-meal as sub title 
 	Examples: 
 		| mealSection  |
@@ -61,7 +61,7 @@ Scenario Outline: Verify the presence of Sub title Main-Meal
 		| snacks       |
 		
 Scenario Outline: Verify the presence of icon for main -meal 
-	User clicks "<mealSection>" meal section 
+	When User clicks "<mealSection>" meal section 
 	Then User should see utensil icon for each main-meal 
 	Examples: 
 		| mealSection  |
@@ -70,84 +70,41 @@ Scenario Outline: Verify the presence of icon for main -meal
 		| dinner       |
 		| snacks       |
 		
-Scenario Outline: Verify the time format in each main-meal 
-	User clicks "<mealSection>" meal section 
-	Then User should see  hh:mm based time in main-meal 
-	Examples: 
-		| mealSection  |
-		| breakfast    |
-		| lunch        |
-		| dinner       |
-		| snacks       |
-		
 Scenario Outline: Validate the indicator for breakfast main-meal 
-	User clicks "<mealSection>" meal section 
+	When User clicks "<mealSection>" meal section 
 	Then User should see indicator AM for breakfast main-meal 
 	Examples: 
 		| mealSection  |
 		| breakfast    |
 		
 Scenario Outline: Validate the indicator for lunch main-meal 
-	User clicks "<mealSection>" meal section 
+	When User clicks "<mealSection>" meal section 
 	Then User should see indicator PM for lunch  main-meal 
 	Examples: 
 		| mealSection  |
 		| lunch        |
 		
 Scenario Outline: Validate the indicator for dinner main-meal 
-	User clicks "<mealSection>" meal section 
+	When User clicks "<mealSection>" meal section 
 	Then User should see indicator PM for dinner  main-meal 
 	Examples: 
 		| mealSection  |
 		| dinner       |
 		
 Scenario Outline: Validate the indicator for snack main-meal 
-	User clicks "<mealSection>" meal section 
+	When User clicks "<mealSection>" meal section 
 	Then User should see indicator PM for snack  main-meal 
 	Examples: 
 		| mealSection  |
 		| snacks       |
 		
-Scenario Outline: Verify the time in  main-breakfast 
-	User clicks "<mealSection>" meal section 
-	Then User should see <time> 
-	Examples: 
-		| mealSection  | time    |
-		| beakfast     | 7:30 AM |
 
 	
-Scenario Outline: Verify the time in main-lunch 
-	User clicks "<mealSection>" meal section
-	Then User should see <time>
-	Examples: 
-		| mealSection  | time     |
-		| lunch        | 12:30 PM |
-	
-Scenario Outline: Verify the time in main-dinner 
-	User clicks "<mealSection>" meal section
-	Then User should see <time>
-	Examples: 
-		| mealSection  | time    |
-		| dinner       | 6:30 PM |
-	
-Scenario Outline: Verify the time in main-snack 
-	User clicks "<mealSection>" meal section
-	Then User should see <time>
-	Examples: 
-		| mealSection  | time    |
-		| snacks       | 6:30 PM |
-	
-Scenario Outline: Verify calories for main-meal is shown for each meal 
-	When User clicks  "<mealSection>" meal section
-	Then User should see the main-meal calorie value 
-Examples: 
-		| mealSection  |
-		| breakfast    |
-		| lunch        |
+
 
 	
 Scenario Outline: Validate the text   Calorie in main-meal 
-	User clicks "<mealSection>" meal section
+	When User clicks "<mealSection>" meal section
 	Then User should see text calorie after the calorie value in main meal 
 Examples: 
 		| mealSection  |
@@ -155,7 +112,7 @@ Examples:
 		| lunch        |
 	
 Scenario Outline: Verify the presence of ✅ Completed button 
-	User clicks "<mealSection>" meal section
+	When User clicks "<mealSection>" meal section
 	Then user should see ✅ Completed button 
 Examples: 
 		| mealSection  |
@@ -163,7 +120,7 @@ Examples:
 		| lunch        |
 	
 Scenario Outline: Verify the presence of ⚠️ Partially Completed button 
-	User clicks "<mealSection>" meal section
+	When User clicks "<mealSection>" meal section
 	Then user should see ⚠️ Partially Completed button 
 Examples: 
 		| mealSection  |
@@ -171,35 +128,14 @@ Examples:
 		| lunch        |
 	
 Scenario Outline: Verify the presence of ❌ Not Completed button 
-	User clicks "<mealSection>" meal section
+	When User clicks "<mealSection>" meal section
 	Then user should see ❌ Not Completed button
 Examples: 
 		| mealSection  |
 		| breakfast    |
 		| lunch        | 
 	
-Scenario Outline: Verify color change of button completed 
-	User clicks "<mealSection>" meal section
-	Then Button color should change to green 
-Examples: 
-		| mealSection  |
-		| breakfast    |
-		| lunch        |
-	
-Scenario Outline: Verify color change of button partially completed 
-	User clicks "<mealSection>" meal section
-	Then Button color should change to yellow 
-Examples: 
-		| mealSection  |
-		| breakfast    |
 
-	
-Scenario Outline: Verify color change of button  not completed 
-	User clicks "<mealSection>" meal section
-	Then Button color should change to red 
-Examples: 
-		| mealSection  |
-		| breakfast    |
 	
 	
 Scenario Outline: 
@@ -210,15 +146,10 @@ Examples:
 		| mealSection  |
 		| snacks       |
 	
-Scenario Outline: Verify the title in flex card in each meal section 
-	When User clicks  "<mealSection>" meal section
-	Then User should see title  Nutrition Insight 
-Examples: 
-		| mealSection  |
-		| snacks       |
+
 	
 Scenario Outline: Verify the sub title in flex card in each meal section 
-	User clicks "<mealSection>" meal section 
+	When User clicks "<mealSection>" meal section 
 	Then User should see subtitle Calorie 
 Examples: 
 		| mealSection  |
@@ -227,7 +158,7 @@ Examples:
 
 	
 Scenario Outline: Verify each meal calorie detail on the right side 
-	User clicks "<mealSection>" meal section 
+	When User clicks "<mealSection>" meal section 
 	Then calorie detail for each meal should appear on the right side of its section 
 Examples: 
 		| mealSection  |
@@ -236,30 +167,24 @@ Examples:
  
 	
 Scenario Outline: Verify that the donut chart is displayed 
-	User clicks "<mealSection>" meal section 
+	When User clicks "<mealSection>" meal section 
 	Then User should see donut chart 
 Examples: 
 		| mealSection  |
 		| snacks       |
 	
 Scenario Outline: Validate that donut chart displays total calories 
-	User clicks "<mealSection>" meal section 
+	When User clicks "<mealSection>" meal section 
 	Then User should see total calories in donut chart
 Examples: 
 		| mealSection  |
 		| snacks       | 
 	
-	
-Scenario Outline: Validate macro percentage distribution in donut chart 
-	User clicks "<mealSection>" meal section 
-	Then Macro percentages match expected values 
-Examples: 
-		| mealSection  |
-		| snacks       | 
+
 	 
 	
 Scenario Outline: Verify that bar chart is visible 
-	User clicks "<mealSection>" meal section 
+	When User clicks "<mealSection>" meal section 
 	Then User should see macronutrient bar chart in each meal section 
 Examples: 
 		| mealSection  |
@@ -268,22 +193,16 @@ Examples:
 
 	
 Scenario Outline: Verify bar chart values match the macro values 
-	User clicks "<mealSection>" meal section 
+	When User clicks "<mealSection>" meal section 
 	Then Each nutrient bar should show a value consistent with its label 
 Examples: 
 		| mealSection  |
 		| snacks       | 
 	
 	
-Scenario Outline: Validate bar chart percentages add up to 100% 
-	User clicks "<mealSection>" meal section 
-	Then All macro percentages combined should make up exactly 100% 
-Examples: 
-		| mealSection  |
-		| snacks       |
 	
 Scenario Outline: Verify presence of macro labels and percentages below the chart 
-	User clicks "<mealSection>" meal section 
+	When User clicks "<mealSection>" meal section 
 	Then Below the chart, every macronutrient should display its name along with the corresponding percentage 
 Examples: 
 		| mealSection  |

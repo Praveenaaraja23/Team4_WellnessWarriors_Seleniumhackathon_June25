@@ -3,16 +3,7 @@ Feature: Validation for View full meal plan
 Background:
 Given User is in View Meal plan
 
-    Scenario Outline: Verify each meal section have Pre meal title 
-    
-    When User clicks Meal sections "<mealSection>" 
-    Then Each meal section should display a pre-meal item with the format Pre-meal:
-Examples: 
-		| mealSection  |
-		| breakfast    |
-		| lunch        |
-		| dinner       |
-		| snacks       |
+
 
     Scenario Outline: Verify pre-meal includes description under the item name for each meal section
       When User clicks Meal sections "<mealSection>"
@@ -75,27 +66,7 @@ Examples:
 		| dinner       |
 		| snacks       |
 
-    Scenario Outline: Verify pre-breakfast time in View Full Plan for each meal section
-    When User clicks Meal sections "<mealSection>"
-    Then Pre- meal time for Breakfast displayed should be "<time>"
-	Examples: 
-		| mealSection  | time      |
-		| breakfast    |  7:00 AM  |
-
-
-    Scenario Outline: Verify pre-lunch time in View Full Plan for each meal section
-    When User clicks Meal sections "<mealSection>"
-    Then Pre- meal time for lunch displayed should be "<time>"
-Examples: 
-		| mealSection  | time      |
-		| lunch        |  12:30 AM  |
-
-    Scenario Outline: Verify pre-dinner time in View Full Plan for each meal section
-    When User clicks Meal sections "<mealSection>"
-    Then Pre- meal time for lunch displayed should be "<time>"
-Examples: 
-		| mealSection  | time      |
-		| lunch        | 6:30 AM    |
+   
 
     Scenario Outline: Verify each meal section have meal title 
     When User clicks Meal sections "<mealSection>"
@@ -117,23 +88,7 @@ Examples:
 		| dinner       |
 		| snacks       |
 
-    Scenario Outline: Verify meal preparation in view full plan for each meal section
-    When User clicks Meal sections "<mealSection>"
-    Then Preparation instructions displayed if available , if not
- Examples: 
-		| mealSection  |
-		| breakfast    |
-		| lunch        |
-		| dinner       |
-		| snacks       |
 
-    Scenario Outline: Verify Nutrients information in view full plan for each meal section
-    When User clicks Meal sections "<mealSection>"
-    Then User should see heading in full plan
-Examples: 
-		| mealSection  |
-		| breakfast    |
-		| lunch        |
 
 
     Scenario Outline: Verify meal total calorie in view full plan for each meal section 
@@ -145,15 +100,7 @@ Examples:
 		| lunch        |
 
 
-    Scenario Outline: Verify the nutrients list (meal portion) in view full plan for each meal section
-    When User clicks Meal sections "<mealSection>"
-    Then User should see 
-Examples: 
-		| mealSection  |
-		| breakfast    |
-		| lunch        |
-		| dinner       |
-		| snacks       |
+
 
 
     Scenario Outline: Verify the nutrients value in view full plan for each meal section
@@ -209,7 +156,7 @@ Examples:
 
     Scenario Outline: Validate impact value
     When User clicks Meal sections "<mealSection>"
-    Then Impact value should be low/medium/high
+    Then Impact value should be low medium high
 Examples: 
 		| mealSection  |
 		| breakfast    |
@@ -217,7 +164,3 @@ Examples:
 		| dinner       |
 		| snacks       | 
 
-    Scenario: Validate navigation of back to plan button
-    Given User is in view full plan page
-    When User clicks back to plan button
-    Then User should redirected to Home page

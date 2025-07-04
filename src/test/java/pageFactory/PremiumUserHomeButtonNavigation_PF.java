@@ -19,7 +19,7 @@ public class PremiumUserHomeButtonNavigation_PF {
 
 	}
 
-	@FindBy(xpath = "//span[text()='Blood Glucose']")
+	@FindBy(xpath = "//span[text()='Blood Glucose']/..")
 	@CacheLookup
 	WebElement bloodGlucoseButton;
 	
@@ -28,7 +28,7 @@ public class PremiumUserHomeButtonNavigation_PF {
 	@CacheLookup
 	WebElement bloodGlucoseScreen;
 	
-	@FindBy(xpath = "//span[text()='Physical Activity']")
+	@FindBy(xpath = "//span[text()='Physical Activity']/..")
 	@CacheLookup
 	WebElement physicalActivityButton;
 	
@@ -36,7 +36,7 @@ public class PremiumUserHomeButtonNavigation_PF {
 	@CacheLookup
 	WebElement physicalActivityScreen;
 	
-	@FindBy(xpath = "//span[text()='Food Intake']")
+	@FindBy(xpath = "//span[text()='Food Intake']/..")
 	@CacheLookup
 	WebElement foodIntakeButton;
 	
@@ -44,7 +44,7 @@ public class PremiumUserHomeButtonNavigation_PF {
 	@CacheLookup
 	WebElement foodIntakeScreen;
 	
-	@FindBy(xpath = "//span[text()='Medication']")
+	@FindBy(xpath = "//span[text()='Medication']/..")
 	@CacheLookup
 	WebElement medicationButton;
 	

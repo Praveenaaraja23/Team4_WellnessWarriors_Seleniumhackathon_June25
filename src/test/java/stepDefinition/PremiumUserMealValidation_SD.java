@@ -52,7 +52,7 @@ public class PremiumUserMealValidation_SD {
 		assertTrue(pf.preMealCalorieDisplayed());
 	}
 
-	@Then("Preparation instructions displayed if available , if not then")
+	@Then("Preparation instructions displayed if available")
 	public void preparation_instructions_displayed_if_available_if_not_then() {
 		assertTrue(pf.preparationTextDisplayed());
 	}
@@ -117,7 +117,7 @@ public class PremiumUserMealValidation_SD {
 		assertTrue(pf.isGlycemicImpactValueDisplayed());
 	}
 
-	@Then("Impact value should be low\\/medium\\/high")
+	@Then("Impact value should be low medium high")
 	public void impact_value_should_be_low_medium_high() {
 		assertTrue(pf.isValidGlycemicImpactValue());
 	}

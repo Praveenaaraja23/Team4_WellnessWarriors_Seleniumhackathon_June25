@@ -20,27 +20,27 @@ public class PremiumUserPhysicalActivityValidation_SD {
 	    pf.physicalActivityClick();
 	}
 
-	@Then("User should see field for Activity Type, Duration,Date,Intensity")
+	@Then("User PA should see field for Activity Type, Duration,Date,Intensity")
 	public void user_should_see_field_for_activity_type_duration_date_intensity() {
 	   assertTrue(pf.activityTypeDisplayed() && pf.dateDisplayed() && pf.durationDisplayed() && pf.intensityDisplayed());
 	}
 
-	@Then("User should see  dropdown for activity type")
+	@Then("User PA should see  dropdown for activity type")
 	public void user_should_see_dropdown_for_activity_type() {
 		assertTrue(pf.activityTypeDropdownDisplayed());
 	}
 
-	@Then("User should see minutes, hours")
+	@Then("User PA should see minutes, hours")
 	public void user_should_see_min() {
 		assertTrue(pf.durationMinDisplayed());
 	}
 	
-	@Then("User should see title Physical Activity")
+	@Then("User PA should see title Physical Activity")
 	public void user_should_see_PA() {
 		assertTrue(pf.paTitleDisplayed());
 	}
 	
-	@Then("User should see subtext Track your fitness journey")
+	@Then("User PA should see subtext Track your fitness journey")
 	public void user_should_see_subText() {
 		assertTrue(pf.subTextDisplayed());
 	}
@@ -50,22 +50,22 @@ public class PremiumUserPhysicalActivityValidation_SD {
 		assertTrue(pf.datePickerDisplayed());
 	}
 
-	@Then("User should see  input field for duration")
+	@Then("User PA should see  input field for duration")
 	public void user_should_see_input_field_for_duration() {
 		assertTrue(pf.presenceInputDisplayed());
 	}
 
-	@Then("User should see thirty in placeholder field")
-	public void user_should_see_in_placeholder_field(String string) {
+	@Then("User PA should see thirty in placeholder field")
+	public void user_should_see_in_placeholder_field() {
 		assertTrue(pf.placeholderTextDisplayed());
 	}
 
-	@Then("User should see intensity field")
+	@Then("User PA should see intensity field")
 	public void user_should_see_intensity_field() {
 	    assertTrue(pf.presenceIntensityDisplayed());
 	}
 
-	@Then("User should see save activity button")
+	@Then("User PA should see save activity button")
 	public void user_should_see_save_activity_button() {
 		assertTrue(pf.saveActivityDisplayed());
 	}

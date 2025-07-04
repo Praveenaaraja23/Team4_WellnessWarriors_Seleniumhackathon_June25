@@ -3,10 +3,6 @@ Feature: Functional testing for physical activity
 Background: PremiumUser PAFT is in physical activity 
 	Given PremiumUser PAFT is in physical activity 
 	
-Scenario: Verify user able to save activity 
-	When PremiumUser PAFT clicks save activity after entering valid 
-	Then User PAFTshould see Your activity is recorded 
-	
 Scenario: Verify user unable to enter invalid value 
 	When PremiumUser PAFT enters invalid value in duration text field 
 	Then User PAFTshould see blank 

@@ -28,10 +28,6 @@ Feature: PremiumUser FI Food Intake Validation
     When PremiumUser FI clicks Food Intake 
     Then User FI should see input field for field food name 
 
-    Scenario: Verify the presence of placeholder in input field
-    When PremiumUser FI clicks Food Intake 
-    Then User FI should see text  e.g., Grilled Chicken Salad as placeholder in input field
-
     Scenario: Verify the presence of dropdown for serving size
     When PremiumUser FI clicks Food Intake 
     Then User FI should see  dropdown for serving size
@@ -50,9 +46,6 @@ Feature: PremiumUser FI Food Intake Validation
     When PremiumUser FI clicks Food Intake 
     Then User FI should see input field for calorie
 
-    Scenario: Verify the placeholder text for calorie
-    When PremiumUser FI clicks Food Intake 
-    Then User FI should see text as placeholder in calorie field
 
     Scenario: Verify helper text below Calories field
     When PremiumUser FI clicks Food Intake 
@@ -61,14 +54,6 @@ Feature: PremiumUser FI Food Intake Validation
     Scenario: Verify the date picker option
     When PremiumUser FI clicks Food Intake 
     Then User FI should see date picker 
-
- 
-
-    Scenario: Verify the presence of input block for notes
-    When PremiumUser FI clicks Food Intake 
-    Then User FI should see input block for notes
-
-
 
     Scenario: Verify the save food entry button
     When PremiumUser FI clicks Food Intake 

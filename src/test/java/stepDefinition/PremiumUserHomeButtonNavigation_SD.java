@@ -36,6 +36,11 @@ public class PremiumUserHomeButtonNavigation_SD {
 	public void user_should_redirect_to_physical_activity_popup_window() {
 		assertTrue(pf.physicalActivityScreenDisplayed());
 	}
+	
+	@Then("User should see four button option")
+	public void user_should_four_button_option() {
+		assertTrue(pf.bloodGlucoseScreenDisplayed() && pf.foodIntakeScreenDisplayed());
+	}
 
 	@When("User clicks on food intake button")
 	public void user_clicks_on_food_intake_button() {
@@ -69,7 +74,6 @@ public class PremiumUserHomeButtonNavigation_SD {
 
 	@Given("User is in dashboard page")
 	public void user_is_in_dashboard_page() {
-		homeScreen();
 		pf.onClicklogButton();
 	}
 
@@ -81,6 +85,21 @@ public class PremiumUserHomeButtonNavigation_SD {
 	@Then("User should see emoji and mood text is changed")
 	public void user_should_see_emoji_and_mood_text_is_changed() {
 		assertTrue(pf.moodTextDisplayed());
+	}
+	
+	@Then("User should see text Blood Glucose")
+	public void user_should_see_text_blood_glucose() {
+		assertTrue(pf.bloodGlucoseScreenDisplayed());
+	}
+
+	@Then("User should see Physical activity")
+	public void user_should_see_physical_activity() {
+	   assertTrue(pf.physicalActivityScreenDisplayed());
+	}
+
+	@Then("User Should see Medication")
+	public void user_should_see_medication() {
+	   assertTrue(pf.medicationScreenDisplayed());
 	}
 
 }

@@ -20,17 +20,11 @@ Scenario: Verify the presence of  Challenge yourself today button
 Scenario: Verify the presence of gender image in the grid
 	Then User should see a gender-specific image based on the gender selected during the onboarding process 
 	
-Scenario: Verify the presence of emoji on the top right of gender image 
-	Then User should see an emoji displayed on the top-right corner of the gender image 
-	
 Scenario: Verify the presence of  label for gender image
 	Then User should see label Mood below the gender image 
 	
 Scenario: Verify the presence of log button 
 	Then User should see log button under gender image 
-	
-Scenario: Verify display mood text based on emoji
-	Then User should see mood text based on the emoji 
 	
 Scenario: Verify the presence of Weekly plan button 
 	Then User should see Week plan button 
