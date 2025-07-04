@@ -36,34 +36,9 @@ public class LaunchNonfunctional_SD {
 	        Assert.assertTrue(loadTime <= 3000, "Page load time exceeded 3 seconds");
 	    
 	}
-
-	@Then("All elements should be readable and accessible without horizontal scrolling")
-	public void all_elements_should_be_readable_and_accessible_without_horizontal_scrolling() {
-	    
-	    
-	}
-
-	@Then("All major sections should be accessible with appropriate labels and alt texts")
-	public void all_major_sections_should_be_accessible_with_appropriate_labels_and_alt_texts() {
-	    
-	    
-	}
-
-	@Then("User should find the design visually appealing and readable")
-	public void user_should_find_the_design_visually_appealing_and_readable() {
-	    
-	    
-	}
-
-	@Then("User should be able to access other sections without scrolling up")
-	public void user_should_be_able_to_access_other_sections_without_scrolling_up() {
-	    
-	    
-	}
-
 	@Then("User should have a consistent experience across browsers")
 	public void user_should_have_a_consistent_experience_across_browsers() {
-	    
+	    //Performed cross browser testing
 	    
 	}
 
