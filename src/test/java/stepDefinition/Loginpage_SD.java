@@ -444,7 +444,7 @@ public class Loginpage_SD {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
-	////////////////////////////////////////////////////////////////////////
+	
 	@Given("User is in step {int} for onboarding process")
 	public void user_is_in_step_for_onboarding_process(Integer int1) {
 	    driver.getCurrentUrl();
