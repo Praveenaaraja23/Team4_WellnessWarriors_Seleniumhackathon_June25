@@ -27,8 +27,7 @@ public class Hooks {
         driverFactory = new DriverManager();
         driver = driverFactory.initializeDrivers("chrome");
         driver.get(ConfigReader.getApplicationUrl());
-        Thread.sleep(2000);
-       // LoggerLoad.info("Initializing driver for : chrome");
+      
     }
 
 
