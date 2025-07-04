@@ -19,8 +19,21 @@ public class Hooks {
 	private static DriverManager driverFactory;
 	ConfigReader configFileReader = new ConfigReader();
 
+<<<<<<< HEAD
 	@Before
 	public void before() throws Throwable {
+=======
+    @Before
+    public void before() throws Throwable {
+        
+        System.out.println("About to open browser: Chrome");
+        driverFactory = new DriverManager();
+        driver = driverFactory.initializeDrivers("chrome");
+        driver.get(ConfigReader.getApplicationUrl());
+        Thread.sleep(2000);
+       // LoggerLoad.info("Initializing driver for : chrome");
+    }
+>>>>>>> db90a2848afb924135814bc450a635303f5d91d2
 
 		System.out.println("About to open browser: Chrome");
 		driverFactory = new DriverManager();

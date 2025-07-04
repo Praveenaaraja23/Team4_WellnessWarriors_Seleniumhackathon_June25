@@ -27,7 +27,6 @@ public class ConfigReader {
             throw new RuntimeException("Configuration.properties not found at " + propertyFilePath);
         }
     }
-
     public static String getApplicationUrl() {
         String url = properties.getProperty("url");
         System.out.println(url);
@@ -49,7 +48,38 @@ public class ConfigReader {
             return path;
         else
             throw new RuntimeException("path not specified in the Configuration.properties file.");
+    } 
+    public static String getFullName() {
+        String fullname = properties.getProperty("fullname");
+        if (fullname != null)
+            return fullname;
+        else
+            throw new RuntimeException("fullname not specified in the Configuration.properties file.");
     }
+
+    public static String getUsername() {
+        String username = properties.getProperty("username");
+        if (username != null)
+            return username;
+        else
+            throw new RuntimeException("username not specified in the Configuration.properties file.");
+    }
+
+    public static String getPassword() {
+        String password = properties.getProperty("password");
+        if (password != null)
+            return password;
+        else
+            throw new RuntimeException("password not specified in the Configuration.properties file.");
+    }
+    public static String getinvalidData() {
+        String password = properties.getProperty("invalidData");
+        if (password != null)
+            return password;
+        else
+            throw new RuntimeException("password not specified in the Configuration.properties file.");
+    }
+
 }
 
 

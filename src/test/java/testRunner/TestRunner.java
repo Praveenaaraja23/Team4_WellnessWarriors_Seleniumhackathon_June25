@@ -10,11 +10,11 @@ import io.cucumber.testng.CucumberOptions;
 		monochrome=false, 
 		tags =" ", 
 		features = {"src/test/resources/features"}, 
-		glue= {"stepDefinition","Hooks"})
+		glue= {"stepDefinition","hooks"})
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-
+	@Override
     @DataProvider(parallel =false)
     public Object[][]  scenarios() {
 				
