@@ -24,7 +24,6 @@ public class Loginpage_SD {
 	@Given("User is on SweetBalance homepage")
 	public void user_is_on_sweet_balance_homepage() {
 	   String url = ConfigReader.getApplicationUrl();
-	//  driver.get(ConfigReader.getApplicationUrl()); 
 	}
 
 	@When("User clicks on {string} link")
@@ -76,22 +75,19 @@ public class Loginpage_SD {
 		try {
 	        List<String> validEmails = ExcelReader.getEmailsByType("Login", "valid");
 	        if (!validEmails.isEmpty()) {
-	            String email = validEmails.get(0); // Get the first valid email
-	            login.enteremail(email);           // Replace with your actual method
-	            login.clickcontinueWEmailBtn();    // Replace with your actual method
+	            String email = validEmails.get(0); 
+	            login.enteremail(email);           
+	            login.clickcontinueWEmailBtn();    
 	        } else {
 	            System.out.println("No valid emails found in Excel.");
 	        }
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }  
-	//	login.clickcontinueWEmailBtn();
-	//	login.enteremail();
 	}
 
 	@Then("User should get password field")
 	public void user_should_get_password_field() {
-	  //  login.passwordpage();
 		String actualurl = driver.getCurrentUrl();
 		String expectedurl = "https://sweet-balance-test-env-3-numpyninjadiabe.replit.app/auth";
 		Assertion assertion = new Assertion();
@@ -103,35 +99,29 @@ public class Loginpage_SD {
 		try {
 	        List<String> invalidEmails = ExcelReader.getEmailsByType("Login", "invalid");
 	        if (!invalidEmails.isEmpty()) {
-	            String email = invalidEmails.get(0); // Get the first invalid email
-	            login.enteremail(email);           // Replace with your actual method
+	            String email = invalidEmails.get(0); 
+	            login.enteremail(email);           
 	        } else {
 	            System.out.println("No invalid emails found in Excel.");
 	        }
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    } 
-	
-	
 	} 
 
 	@Then("Email field should show validation error")
 	public void email_field_should_show_validation_error() {
-	//    String currenturl = driver.getCurrentUrl();
-	//    Assert.assertTrue(currenturl.contains("Complete your profile"),
-	 //           "Expected navigation to Create Account page did not happen for invalid email.");
 		login.errorMsgDisplay();
 	    driver.navigate().back();
 	} 
 	@When("Registered user clicks continue with email button after entering a valid email")
 	public void registered_user_clicks_continue_with_email_button_after_entering_a_valid_email() {
-	//	driver.navigate().back();
 		try {
 	        List<String> validEmails = ExcelReader.getEmailsByType("Login", "valid");
 	        if (!validEmails.isEmpty()) {
-	            String email = validEmails.get(0); // Get the first valid email
-	            login.enteremail(email);           // Replace with your actual method
-	            login.clickcontinueWEmailBtn();    // Replace with your actual method
+	            String email = validEmails.get(0); 
+	            login.enteremail(email);           
+	            login.clickcontinueWEmailBtn();    
 	        } else {
 	            System.out.println("No valid emails found in Excel.");
 	        }
@@ -150,9 +140,9 @@ public class Loginpage_SD {
 		try {
 	        List<String> validEmails = ExcelReader.getEmailsByType("Login", "valid");
 	        if (!validEmails.isEmpty()) {
-	            String email = validEmails.get(0); // Get the first valid email
-	            login.enteremail(email);           // Replace with your actual method
-	            login.clickcontinueWEmailBtn();    // Replace with your actual method
+	            String email = validEmails.get(0); 
+	            login.enteremail(email);           
+	            login.clickcontinueWEmailBtn();    
 	        } else {
 	            System.out.println("No valid emails found in Excel.");
 	        }
@@ -174,28 +164,23 @@ public class Loginpage_SD {
 	@Then("User should see text {string} as placeholder in password field")
 	public void user_should_see_text_as_placeholder_in_password_field(String string) {
 	    login.EnterUrPwd();
-		// String actualPlaceholder = login.getPasswordPlaceholder(); // You need to implement this
-		//    Assert.assertEquals(actualPlaceholder, expectedText, "Placeholder text mismatch in password field.");
 	}
 	@When("Registered user clicks sign in after entering password")
 	public void registered_user_clicks_sign_in_after_entering_password() {
 		try {
 	        List<String> passwords = ExcelReader.getPasswordsByType("Login", "valid");
 	        if (!passwords.isEmpty()) {
-	            String password = passwords.get(0); // First valid password from Excel
-	            login.EnterPwd(password);          // 'login' is your PageFactory object
+	            String password = passwords.get(0); 
+	            login.EnterPwd(password);          
 	            login.clicksigninbtn();
 	        }
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    } 
-	//	login.EnterUrPwd();
 	}
 
 	@Then("User should be navigated to home page")
 	public void user_should_be_navigated_to_home_page() {
-	//   String actualurl = driver.getCurrentUrl();
-	 //  String expectedurl = "https://sweet-balance-test-env-3-numpyninjadiabe.replit.app/";
 	   driver.navigate().to("https://sweet-balance-test-env-3-numpyninjadiabe.replit.app/");
 	//   Assertion assertion = new Assertion();
 	//	assertion.assertEquals(actualurl, expectedurl);
@@ -203,8 +188,6 @@ public class Loginpage_SD {
 
 	@When("Unregistered user clicks continue with email button after entering a valid new email")
 	public void unregistered_user_clicks_continue_with_email_button_after_entering_a_valid_new_email() {
-	 //   login.clicklogoubt();
-	//    login.clickloginbt();
 	    try {
 	        List<Map<String, String>> data = ExcelReader.readSheet("Login");
 	        for (Map<String, String> row : data) {
@@ -223,17 +206,9 @@ public class Loginpage_SD {
 	@Then("User should get {string} form")
 	public void user_should_get_form(String string) {
 		String currentresult = driver.getCurrentUrl();
-		// String expectedresult = driver.getTitle();
 		String expectedresult = "https://sweet-balance-test-env-3-numpyninjadiabe.replit.app/auth";
-		 //   Assert.assertTrue(expectedresult.contains("Complete your profile"),
-		    //        "Expected navigation to Create Account page for valid new email.");
 		Assertion assertion = new Assertion();
 		assertion.assertEquals(currentresult, expectedresult);
-		/*    String name = ConfigReader.getFullName();
-		    String user = ConfigReader.getUsername();
-		    String pass = ConfigReader.getPassword();
-		    login.clicktermsbtn();
-		    login.clickCAbtn(); */
 	}
 	@When("User clicks continue with email button after entering a valid new email")
 	public void user_clicks_continue_with_email_button_after_entering_a_valid_new_email() {
@@ -255,14 +230,6 @@ public class Loginpage_SD {
 	public void input_field_should_be_displayed(String string) {
 		String name = ConfigReader.getFullName();
 	}
-/*	@Then("Terms & Conditions checkbox should be displayed")
-	public void terms_conditions_checkbox_should_be_displayed() {
-	    login.displaytermsbtn();
-	} */
-/*	@Then("{string} button should be disabled")
-	public void button_should_be_disabled(String string) {
-	    login.disableCAbtn();
-	} */
 	@Given("User is on complete profile form page")
 	public void user_is_on_complete_profile_form_page() {
 	/*    String currenturl = driver.getCurrentUrl();
@@ -298,23 +265,7 @@ public class Loginpage_SD {
 		assertion.assertEquals(currentresult, expectedresult); */
 		driver.get("https://sweet-balance-test-env-3-numpyninjadiabe.replit.app/blood-report-question");
 	}
-/*	@Then("User should see Upload Blood Report button")
-	public void user_should_see_upload_blood_report_button() {
-	    login.seeuploadefile();
-	} */
-
-/*	@Then("User should get {string}  form")
-	public void user_should_get_form(String string) {
-		 String currentresult = driver.getCurrentUrl();
-		 String expectedresult = driver.getTitle();
-		    Assert.assertTrue(expectedresult.contains("Complete your profile"),
-		            "Expected navigation to Create Account page for valid new email.");
-		    String name = ConfigReader.getFullName();
-		    String user = ConfigReader.getUsername();
-		    String pass = ConfigReader.getPassword();
-		    login.clicktermsbtn();
-		    login.clickCAbtn();
-	} */
+	
 	@Given("User is in upload blood report page")
 	public void user_is_in_upload_blood_report_page() {
 	/*	 String currentresult = driver.getCurrentUrl();
@@ -324,22 +275,13 @@ public class Loginpage_SD {
 	}
 	@When("User clicks create account button after filling invalid data")
 	public void user_clicks_create_account_button_after_filling_invalid_data() {
-	    String ivaliddata = ConfigReader.getinvalidData();
-	}
-
-/*	@Then("User should see error message")
-	public void user_should_see_error_message() {
-	    login.seeinvaliddataerror();
-	} */
+	    String invaliddata = ConfigReader.getinvalidData();
+	} 
 
 	@When("User clicks on {string} button")
 	public void user_clicks_on_button(String string) {
-	    login.uploadefile();
+	    login.clickuploadbloodreprtBtn();
 	}
-/*	@Then("User should see Step Through Onboarding button")
-	public void user_should_see_step_through_onboarding_button() {
-	    login.displayStepOnboard();
-	} */
 
 	@Then("User should navigate to blood report modal")
 	public void user_should_navigate_to_blood_report_modal() {
@@ -372,7 +314,8 @@ public class Loginpage_SD {
 
 	@Then("Upload should see processing percentage bar")
 	public void upload_should_see_processing_percentage_bar() {
-	  login.getUploadProgressPercentage();
+	 String percentage = login.getUploadProgressPercentage();
+	  System.out.println("Upload progress: " + percentage);
 	}
 	@When("User clicks {string}")
 	public void user_clicks(String string) {
@@ -387,7 +330,6 @@ public class Loginpage_SD {
 	public void user_clicks_after_uploading_valid_file(String string) {
 		login.uploadefile();
 		login.clickuploadNprocess();
-	 //   login.clickuploadNprocess();
 	}
 	@Then("User should see onboarding button")
 	public void user_should_see_onboarding_button() {
@@ -400,37 +342,31 @@ public class Loginpage_SD {
 
 	@Then("User should see Blood Test Results,Complete Blood Count, Medical Conditions ,Abnormal Values, Recommendations")
 	public void user_should_see_blood_test_results_complete_blood_count_medical_conditions_abnormal_values_recommendations() {
-	    String currenturl = driver.getCurrentUrl();
-	    String expectedurl = "https://sweet-balance-test-env-3-numpyninjadiabe.replit.app/upload-blood-report";
-	    Assert.assertEquals(currenturl,expectedurl);
+		login.displayglucoselevel();
+		login.displayHbA1c();
+		login.displaybloodcount();
+		login.displayMC();
+		login.displayabnormalvalue();
+		login.displayrecommendation(); 
 	}
 	@Given("User is on report analysis")
 	public void user_is_on_report_analysis() {
-	/*	String currenturl = driver.getCurrentUrl();
-	    String expectedurl = "https://sweet-balance-test-env-3-numpyninjadiabe.replit.app/upload-blood-report";
-	    Assert.assertEquals(currenturl,expectedurl); */
-	//	login.uploadefile();
-	//	login.clickuploadNprocess();
-	/*	driver.get("https://sweet-balance-test-env-3-numpyninjadiabe.replit.app/upload-blood-report");
-	    login.uploadefile();
-		login.clickuploadNprocess(); */
 		driver.getCurrentUrl();
 	} 
 
 	@When("User clicks Onboarding button")
-	public void user_clicks_onboarding_button() {
+	public void user_clicks_onboarding_button() throws Exception {
 	    login.clickcontinueOnboard();
 	}
 	@When("User submits the form with invalid input")
 	public void user_submits_the_form_with_invalid_input() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    login.enterinvalidheight();
+	    login.enterinvalidweight();
 	}
 
 	@When("User clicks continue after filling form")
 	public void user_clicks_continue_after_filling_form() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+           login.clickcontinueBtn();
 	}
 
 	@Then("Progress bar should reflect Step {int} of {int} as filled")
@@ -580,8 +516,6 @@ public class Loginpage_SD {
 
 	@When("User selects a condition option")
 	public void user_selects_a_condition_option() {
-		//driver.getCurrentUrl();
-	//	login.switchToOnboardingFrame();
 	    login.clicktype2();
 	}
 
