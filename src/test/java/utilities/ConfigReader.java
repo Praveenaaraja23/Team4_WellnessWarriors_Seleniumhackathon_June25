@@ -74,13 +74,7 @@ public class ConfigReader {
         else
             throw new RuntimeException("password not specified in the Configuration.properties file.");
     }
- /*   public static String getinvalidemail() {
-        String password = properties.getProperty("invalid");
-        if (password != null)
-            return password;
-        else
-            throw new RuntimeException("invalid not specified in the Configuration.properties file.");
-    } */
+ 
 
     
     
