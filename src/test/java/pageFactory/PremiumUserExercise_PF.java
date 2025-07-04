@@ -20,16 +20,6 @@ public class PremiumUserExercise_PF {
 			PageFactory.initElements(driver,this);
 	}
 	
-	public void premiumUserlogin() {
-
-		
-		driver.findElement(By.name("email")).sendKeys("team4selenium@gmail.com");
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
-		driver.findElement(By.name("password")).sendKeys("phase2selenium");
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
-	}
-	
-	
 	
 	//Exercise home Page
 	    @FindBy(xpath="//span[text()='SweetBalance ']") public WebElement Sweetbalancehomwtxt;
