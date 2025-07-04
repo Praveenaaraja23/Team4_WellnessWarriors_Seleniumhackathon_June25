@@ -6,22 +6,20 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageFactory.PremiumUserHomePage_pf;
+import utilities.ConfigReader;
 
 public class PremiumUserHomePage_SD {
-	private PremiumUserHomePage_pf pf = null;
+	private PremiumUserHomePage_pf pf = new PremiumUserHomePage_pf();
 
 	@Given("User is in password auth page")
 	public void user_is_in_password_auth_page() {
 		// Write code here that turns the phrase above into concrete actions
-		authPageLogin();
+		pf.initiazeHomeScreen(ConfigReader.getProperty("premiumUser"));
 	}
 
 	@When("User clicks sign in after entering password")
 	public void user_clicks_sign_in_after_entering_password() {
-		// Write code here that turns the phrase above into concrete actions
-		// *[matches(text(), '😊')]
-
-		pf.signIn();
+		pf.signIn(ConfigReader.getProperty("premiumPassword"));
 	}
 
 	@Then("User should see the navigation bar displaying items in the order: Home,Logbook,Dashboard,Education")
@@ -132,12 +130,6 @@ public class PremiumUserHomePage_SD {
 	@Then("Pill icon should be present in medication")
 	public void pill_icon_should_be_present_in_medication() {
 		Assert.assertTrue(pf.isMedicationIconDisplayed());
-	}
-
-	private void authPageLogin() {
-		pf = new PremiumUserHomePage_pf();
-		pf.initiazeHomeScreen();
-
 	}
 
 }

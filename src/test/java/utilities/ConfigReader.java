@@ -35,6 +35,11 @@ public class ConfigReader {
         else
             throw new RuntimeException("url not specified in the Configuration.properties file.");
     }
+    
+    public static String getProperty(String property) {
+        return properties.getProperty(property);
+        
+    }
 
     public static String excelPath() {
         String path = properties.getProperty("path");
