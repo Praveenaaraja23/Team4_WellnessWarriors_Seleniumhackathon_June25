@@ -22,12 +22,12 @@ public class LaunchNonfunctional_PF {
 	 public long getPageLoadTime() {
 	        JavascriptExecutor js = (JavascriptExecutor) driver;
 
-	        // Wait until page is fully loaded
+	        
 	        new WebDriverWait(driver, Duration.ofSeconds(10)).until(
 	            webDriver -> js.executeScript("return document.readyState").equals("complete")
 	        );
 
-	        // Return load time in milliseconds
+	      
 	        return (Long) js.executeScript(
 	            "return window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;"
 	        );
