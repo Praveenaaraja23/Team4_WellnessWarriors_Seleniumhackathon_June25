@@ -17,8 +17,8 @@ import utilities.DriverManager;
 
 public class LaunchUIComponents_PF {
 	
-	WebDriver driver= DriverManager.getDriver();
-	ConfigReader configFileReader=DriverManager.configReader();
+	WebDriver driver = DriverManager.getDriver();
+	ConfigReader configFileReader = DriverManager.configReader();
 	
 	 public LaunchUIComponents_PF() {
 	    	

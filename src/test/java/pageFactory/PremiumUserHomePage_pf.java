@@ -103,6 +103,10 @@ public class PremiumUserHomePage_pf {
 	@CacheLookup
 	WebElement medicationButton;
 	
+	@FindBy(xpath = "//button[contains(text(),'Login')]")
+	@CacheLookup
+	WebElement loginButton;
+	
 	
 	@FindBy(xpath = "//*[@class='lucide lucide-activity h-6 w-6 mb-2 text-violet-600']")
 	@CacheLookup
@@ -121,20 +125,17 @@ public class PremiumUserHomePage_pf {
 	WebElement medicationIcon;
 	
 
-	public void setUserName(String uName) {
+
+	public void initiazeHomeScreen(String uName) {
+		loginButton.click();
 		inputEmail.clear();
 		inputEmail.sendKeys(uName);
-	}
-
-	public void initiazeHomeScreen() {
-		driver.get("https://sweet-balance-test-env-3-numpyninjadiabe.replit.app/auth");
-		setUserName("team4selenium@gmail.com");
 		btnContinueEmail.click();
 	}
 	
-	public void signIn() {
+	public void signIn(String pwd) {
 		inputPwd.clear();
-		inputPwd.sendKeys("phase2selenium");
+		inputPwd.sendKeys(pwd);
 		btnSignin.click();
 	}
 	
