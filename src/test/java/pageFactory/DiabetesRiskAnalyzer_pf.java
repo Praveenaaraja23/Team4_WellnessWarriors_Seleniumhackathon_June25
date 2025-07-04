@@ -33,11 +33,9 @@ public class DiabetesRiskAnalyzer_pf {
 	@FindBy(xpath = "//button[contains(text(),'Calculate Risk')]")WebElement calcRiskBtn;
 	@FindBy(id = "risk_age")WebElement agetextbox;
 	@FindBy(id = "risk_weight")WebElement weighttextbox;
-	//@FindBy(id = "risk_familyHistory")WebElement familyHistorychkbox;
+	
 	@FindBy(xpath = "(//span[normalize-space()='Family history of diabetes'])[1]") WebElement familyHistoryInput;
-//	@FindBy(id = "risk_activity")WebElement physicalActivitydropdown;
-//	@FindBy(id = "risk_bloodPressure")WebElement bpstatusdropdown;
-//	@FindBy(id = "risk_diet")WebElement dietQualitydrpdwn;
+
 	@FindBy(id =  "risk_activity") WebElement selecacteveldropdown;
 	@FindBy(id = "risk_bloodPressure") WebElement selectbpstatusdropdown;
 	@FindBy(id=   "risk_diet")WebElement selectdietQualitydrpdwn;
@@ -85,10 +83,7 @@ public class DiabetesRiskAnalyzer_pf {
 	        wait.until(ExpectedConditions.elementToBeClickable(cancelBtn)).click();
 	    }
 	
-	//public boolean iscalcRiskButn() {
-      //  return calcRiskBtn.isDisplayed();
-    //}
-	 
+	
 	 public boolean isCalcRiskBtn() {
 		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		    try {
@@ -227,7 +222,7 @@ public class DiabetesRiskAnalyzer_pf {
 	        return String.join(", ", optionTexts);
 	    }
 	    
-	    //Riskassesmentpop
+	  
 	    
 	    public String riskassesmenttext() {
 			return diabetesrisckpopup.getText();
