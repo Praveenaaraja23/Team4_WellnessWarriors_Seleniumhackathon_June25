@@ -19,12 +19,9 @@ import utilities.DriverManager;
 public class Loginpage_pf {
 	WebDriver driver;
 	private WebDriverWait wait;
-//	WebDriver driver= DriverManager.getDriver();
 	ConfigReader configFileReader=DriverManager.configReader();
 	
 	public Loginpage_pf(WebDriver driver){
-	//	this.driver = driver;
-	//	driver = this.driver;
 		this.driver = DriverManager.getDriver();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		PageFactory.initElements(driver , this);
@@ -51,13 +48,10 @@ public class Loginpage_pf {
 	WebElement or;
 	@FindBy(xpath ="//input[@name='password']")
 	WebElement password;
-//	@FindBy(xpath ="//button[text()='Sign in']")
 	@FindBy(xpath ="//button[@type='submit']")
 	WebElement SigninBtn;
-//	@FindBy(xpath ="//p[@class='text-sm text-gray-500']")
 	@FindBy(xpath ="//*[@class='text-sm text-gray-500']")
 	WebElement enableEmail;
-//	@FindBy(xpath ="//button[text()='Forgot password?']")
 	@FindBy(xpath ="//*[@id=\"root\"]/div[1]/div/div[2]/form/div[2]/button")
 	WebElement forgotPwdBtn;
 	@FindBy(xpath ="//input[@placeholder='Enter your password']")
@@ -70,10 +64,6 @@ public class Loginpage_pf {
 	WebElement usernameInput;
 	@FindBy(name="password")
 	WebElement passwordInput;
-/*	@FindBy(id = "password")
-	WebElement passwordField; */
-//	@FindBy(xpath="/html/body/div/div[1]/div/div[2]/form/div[5]/button")
-//	@FindBy(xpath="//*[@role='checkbox']")
 	@FindBy(xpath = "//p[text()='By continuing you agree to our T&Cs and Privacy Policy']") 
 	WebElement termsandConBtn;
 	@FindBy(xpath = "/html/body/div/div[1]/div/div[2]/form/button")
@@ -90,28 +80,20 @@ public class Loginpage_pf {
 	WebElement dragNdrop ;
 	@FindBy(xpath = "//button[text()='Cancel']")
 	WebElement cancelbtn;
-//	@FindBy(xpath = "//*[text()='Upload & Process']")
 	@FindBy(xpath = "/html/body/div/div[1]/div/div[2]/div[3]/button[2]")
 	WebElement uploadNProcessbtn;
 	@FindBy(xpath= "//*[@id=\"root\"]/div[1]/div/div[2]/div[3]/div[1]/span[2]")
-    WebElement progressBar;
-//	@FindBy(xpath = "/html/body/div/div[1]/div/button")
+        WebElement progressBar;
 	@FindBy(css = "button.bg-gradient-to-r.from-violet-600.to-purple-600")
 	WebElement continueOnboardbtn;
 	@FindBy(xpath = "//*[@id=\"root\"]/div[1]/div/form/div/div[1]/input")
-//	@FindBy(xpath = "//input[@placeholder='Enter your age']")
 	WebElement age;
-//	@FindBy(xpath = "//input[@placeholder='Enter height in cm (1-300)']")
 	@FindBy(xpath = "//*[@id=\"root\"]/div[1]/div/form/div/div[3]/input")
 	WebElement height;
-//	@FindBy(xpath = "//input[@placeholder='Enter weight in kg (1-500)']")
 	@FindBy(xpath = "//*[@id=\"root\"]/div[1]/div/form/div/div[4]/input")
 	WebElement weight;
-//	@FindBy(xpath = "//select[@name='gender']")
 	@FindBy(xpath = "//*[@id=\"root\"]/div[1]/div/form/div/div[2]/select")
 	WebElement genderfield;
-//	@FindBy(xpath = "//button[@type='submit']")
-//	WebElement continueBtn;
 	@FindBy(xpath = "//*[@id=\"root\"]/div[1]/div/form/h2")
 	WebElement step1Title;
 	@FindBy(xpath = "//*[@id=\"root\"]/div[1]/div/form/div[1]/div[1]")
@@ -124,12 +106,10 @@ public class Loginpage_pf {
 	WebElement back;
 	@FindBy(xpath = "//*[@id=\"root\"]/div[1]/div")
 	WebElement step3;
-//	@FindBy(xpath = "//*[@id=\"root\"]/div[1]/div/form/div[1]/div[1]/span")
 	@FindBy(xpath = "//span[text()='All-inclusive diet 🍴🍖🍎']")
 	WebElement Alldiet;
 	@FindBy(xpath = "//*[@id=\"root\"]/div[1]/div")
 	WebElement step4;
-//	@FindBy(xpath = "//*[@id=\"root\"]/div[1]/div/form/div[1]/div[5]")
 	@FindBy(xpath = "//span[text()='Asian 🍜']")
 	WebElement Asian;
 	@FindBy(xpath = "//*[@id=\"root\"]/div[1]/div")
@@ -140,17 +120,13 @@ public class Loginpage_pf {
 	WebElement Nuts;
 	@FindBy(xpath = "//button[text()='Submit']")
 	WebElement submitbtn;
-//	@FindBy(xpath = "//*[text()='So, Which sugar rebellion are we dealing with?']")
 	@FindBy(xpath = "//h1[@class='text-3xl font-italic bg-gradient-to-r from-violet-700 to-fuchsia-700 bg-clip-text text-transparent']")
 	WebElement title_withoutbloodreport;
-	
 	@FindBy(xpath = "//p[@class='text-sm text-gray-600 text-right']")
 	WebElement progressbar_withoutblood;
-/*	@FindBy(xpath = "//*[@class='space-y-2']/button[1]")
-	WebElement type2; */
-	@FindBy(xpath = "//*[@class='inline-flex items-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input hover:text-accent-foreground h-10 w-full justify-between px-6 py-4 text-left transition-all duration-200 bg-white/70 hover:bg-white/90 backdrop-blur-sm']")
-	WebElement type2;
-	@FindBy(xpath = "//*[@class='space-y-2']/button[2]")
+	@FindBy(xpath = "//button[.//span[normalize-space()='Type 2']")
+	WebElement type2; 
+	@FindBy(xpath = "//button[.//span[normalize-space()=\"I don't know\"]]")
 	WebElement idk;
 	
 	
@@ -190,8 +166,6 @@ public class Loginpage_pf {
 	public void enteremail(String email) {
 		inputfield.clear();
 		inputfield.sendKeys(email);
-	/*	enteremail.sendKeys(email); */
-	//	enteremail.sendKeys("team4selenium@gmail.com");
 	}
 	public void clickcontinueBtn() {
 		continueBtn.click();
@@ -214,11 +188,7 @@ public class Loginpage_pf {
 	public void EnterPwd(String pwd) {
 		enterPwd.clear();
 		enterPwd.sendKeys(pwd);
-	//	enterPwd.sendKeys("phase2selenium");
 	}
-/*	public String getPasswordPlaceholder() {
-	    return passwordField.getAttribute("placeholder");
-	} */
 	public void clicksigninbtn() {
 		SigninBtn.click();
 	}
@@ -322,9 +292,7 @@ public class Loginpage_pf {
 	 public void clicksubmitbtn() {
 		 submitbtn.click();
 		}
-/*	 public String displaystep1title_withoutblood() {
-		return title_withoutbloodreport.getText();
-		} */
+
 	 public boolean displaystep1title_withoutblood() {
 		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		    try {
@@ -337,17 +305,12 @@ public class Loginpage_pf {
 	 public void displayprogress_withoutblood() {
 		 progressbar_withoutblood.isDisplayed();
 		}
-/*	 public void switchToOnboardingFrame() {
-	        // Replace "frameNameOrId" with actual name, id, or index
-	        driver.switchTo().frame("frameNameOrId");
-	    } */
+
 	 public void clicktype2() {
 		// type2.click();
 		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		    wait.until(ExpectedConditions.elementToBeClickable(type2)).click();
 		}
-/*	 public void switchBackToMainContent() {
-	        driver.switchTo().defaultContent();
-	    } */
+
 } 
 
