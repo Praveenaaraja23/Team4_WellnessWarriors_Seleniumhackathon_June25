@@ -8,7 +8,7 @@ import pageFactory.SubscriptionPage;
 
 public class SubscriptionSteps {
 	
-	private static final String TEST_EMAIL    = "nump@gmail.com";
+	private static final String TEST_EMAIL    = "newuser1@gmail.com";
     private static final String TEST_PASSWORD = "phase2selenium";
 
    SubscriptionPage subscriptionPage = new SubscriptionPage();

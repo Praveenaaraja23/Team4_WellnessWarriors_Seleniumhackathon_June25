@@ -12,9 +12,6 @@ Feature: Home Page – Meal Section Details
     Then the user should see the pre-meal calorie value
     Then the user should see the "<indicator>" indicator for the "<mealType>" pre-meal
     Then the user should see the pre-meal time in "hh:mm" format
-    #Then the user should see green color for Carbs
-    #Then the user should see purple color for Fat
-    #Then the user should see pink color for Protein
     Then the user should see each macro’s unit displayed as "g"
 
     Examples:

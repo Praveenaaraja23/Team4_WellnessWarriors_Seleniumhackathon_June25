@@ -18,7 +18,7 @@ Feature: Validation for Home page – Vitals, header and navigation (free user)
       | Dashboard         |
       | Education         |
 
-  @tag @error @hpv
+  @tag @error 
   Scenario Outline: Status label "<label>" is present
     When nothing else is done
     Then the label "<label>" is visible in the Current-status section
@@ -41,12 +41,7 @@ Feature: Validation for Home page – Vitals, header and navigation (free user)
     When nothing else is done
     Then the timestamp shows hh:mm with AM/PM or a relative time such as x min/h ago
 
-  #@bug @hpv
-  #Scenario: 12-hour clock indicator is visible
-    #When nothing else is done
-    #Then a 12-hour clock indicator is visible on the card
-
-  @tag @error @hpv
+  @tag @error 
   Scenario Outline: Numeric value for "<metric>" is visible
     When nothing else is done
     Then the numeric value for "<metric>" is visible
